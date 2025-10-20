@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Review Package</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            background-size: cover;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;  
+            background-color: #002147;
+            color: white;
+            padding: 50px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            top: -60px;
+            border-radius: 10px;
+        }
+
+        .package-title {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .traveller-section {
+            background-color: #f8f8f8;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .save-btn,
+        .payment-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .save-btn:hover,
+        .payment-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .price-section {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .original-price {
+            font-size: 20px;
+            color: gray;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            color: red;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        .final-price {
+            font-size: 26px;
+            color: #5e5e5f;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="review-header">
+    <div>Confirm Your Trip!!!</div>
+</div>
+
+<div class="container">
+    <div class="package-title">Explore, Experience, Enjoy!</div>
+
+    <form id="traveller-form" action="save_traveller.php" method="POST">
+        <div class="traveller-section">Traveller Details</div>
+        <div class="form-group">
+            <label>First Name*</label>
+            <input type="text" id="first-name" name="traveller_first_name" required>
+        </div>
+        <div class="form-group">
+            <label>Last Name*</label>
+            <input type="text" id="last-name" name="traveller_last_name" required>
+        </div>
+        <div class="form-group">
+            <label>Date of Birth*</label>
+            <input type="date" id="dob" name="traveller_dob" required>
+        </div>
+        <div class="form-group">
+            <label>Gender*</label>
+            <select id="gender" name="traveller_gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Passport Number*</label>
+            <input type="text" id="passport" name="traveller_passport" required>
+        </div>
+
+        <button type="submit" class="save-btn">Save Traveller Details</button>
+
+        <div class="traveller-section">Travel Details</div>
+        <div class="form-group">
+            <label for="from"><strong>From:</strong></label>
+            <select id="from" name="from" required>
+                <option value="">Select</option>
+                <option value="New Delhi">New Delhi</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="from-date"><strong>From Date:</strong></label>
+            <input type="date" id="from-date" name="from-date" required>
+        </div>
+        <div class="form-group">
+            <label for="to"><strong>To:</strong></label>
+            <select id="to" name="to" required>
+                <option value="">Select</option>
+                <option value="Paris">Paris</option>
+                <option value="Japan">Japan</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Maldives">Maldives</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="to-date"><strong>To Date:</strong></label>
+            <input type="date" id="to-date" name="to-date" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email*</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Mobile Code*</label>
+            <input type="text" id="mobile-code" name="mobile_code" required>
+        </div>
+        <div class="form-group">
+            <label>Mobile*</label>
+            <input type="text" id="mobile" name="mobile" required>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" id="city" name="city">
+        </div>
+        <div class="form-group">
+            <label>GST State*</label>
+            <input type="text" id="gst-state" name="gst_state" required>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <div class="form-group">
+            <label>Special Requests</label>
+            <input type="text" id="special-request" name="special_request">
+        </div>
+    </form>
+
+    <div class="price-section">
+        <span class="original-price">₹1,50,000</span> 
+        <span class="discount">20% OFF</span>
+        <div class="final-price">Final Price: ₹1,20,000</div>
+    </div>
+
+    <button class="payment-btn" onclick="validateAndProceed()">Proceed to Payment</button>
+</div>
+
+<script>
+    function validateAndProceed() {
+        const fields = [
+            { id: "first-name" },
+            { id: "last-name" },
+            { id: "dob" },
+            { id: "gender" },
+            { id: "passport" },
+            { id: "from-date" },
+            { id: "to-date" },
+            { id: "to" },
+            { id: "from" },
+            { id: "email" },
+            { id: "mobile-code" },
+            { id: "mobile" },
+            { id: "gst-state" }
+        ];
+
+        let isValid = true;
+
+        fields.forEach(field => {
+            const input = document.getElementById(field.id);
+            if (input && !input.value.trim()) {
+                alert('Please fill out the ${field.id.replace("-", " ")} field.');
+                input.focus();
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            
+            window.location.href = "payments.html";
+        }
+    }
+</script>
+
+</body>
+</html>
+```
