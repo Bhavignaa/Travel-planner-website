@@ -1,0 +1,294 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Paris Travel Packages</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background: #f8f9fa;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+   
+        .hero-section {
+            height: 50vh;
+            background: url('http://10wallpaper.com/wallpaper/1920x1080/1304/eiffel_tower_paris_france-city_travel_photography_wallpaper_1920x1080.jpg') 
+            no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: white;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 200px; 
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .package-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: -50px auto 30px;
+            position: relative;
+            z-index: 3;
+            margin-left: 15%;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .package-card:hover {
+        transform: scale(1.05);
+        }
+
+        .package-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .package-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .package-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .wishlist-icon {
+            font-size: 20px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .wishlist-icon.liked {
+            color: red;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-text">
+            <h1>Paris Travel Packages</h1>
+            <p>Experience the City of Love and Lights!</p>
+        </div>
+    </div>
+
+    <div class="package-container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://media.timeout.com/images/100471869/image.jpg" class="package-img" alt="Classic Parisian Experience">
+                    <div class="p-3">
+               
+                        <span class="badge badge-info">Cultural Exploration</span>
+                        <span class="badge badge-primary float-right">4N/5D</span>
+                        <h4 class="package-title">Classic Parisian Experience</h4>
+                        <p class="text-muted">4 Nights in Paris</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Guided tour of the <b>Eiffel Tower</b> and <b>Louvre Museum</b></li>
+                            <li>✔ Seine River Cruise with dinner</li>
+                            <li>✔ Visit to <b>Notre-Dame Cathedral</b> and <b>Montmartre</b></li>
+                            <li>✔ Accommodation in a centrally located hotel</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Early bird discount of <span class="text-success font-weight-bold">₹5,000</span> for bookings made 60 days in advance!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹80,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹1,60,000 for two | <b class="text-danger">Limited Availability!</b></p>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://www.vikingrivercruises.com/images/CC_Longships_Seine_Class_Paris_Eiffel_TALL_RND_1680x716_tcm21-165306.jpg" class="package-img" alt="Romantic Paris Getaway">
+                    <div class="p-3">
+                 
+                        <span class="badge badge-danger">Romantic Escape</span>
+                        <span class="badge badge-primary float-right">3N/4D</span>
+                        <h4 class="package-title">Romantic Paris Getaway</h4>
+                        <p class="text-muted">3 Nights in Paris</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Stay in a luxury boutique hotel in the <b>Marais</b> district</li>
+                            <li>✔ Private Seine River Cruise with champagne</li>
+                            <li>✔ Couples' photoshoot at iconic Parisian landmarks</li>
+                            <li>✔ Gourmet dinner at a Michelin-starred restaurant</li>
+                        </ul>
+                        <div  class="p-2 bg-light border rounded">
+                            Complimentary <span class="text-success font-weight-bold">spa treatment</span> for couples booking this package!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹95,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹1,90,000 for two | <b class="text-danger">Limited Slots Available!</b></p>
+                    </div>
+                </div>
+            </div>
+
+         
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://dotravel.com/uploads/products/2975/1554712783/eiffel-tower-dinner-with-priority-access.jpg" class="package-img" alt="Paris for Families">
+                    <div class="p-3">
+                        
+                        <span class="badge badge-warning">Family Vacation</span>
+                        <span class="badge badge-primary float-right">6N/7D</span>
+                        <h4 class="package-title">Paris for Families</h4>
+                        <p class="text-muted">6 Nights in Paris</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Family-friendly hotel with spacious rooms</li>
+                            <li>✔ Visit to Disneyland Paris and <b>Parc Astérix</b></li>
+                            <li>✔ Fun-filled activities for kids at <b>Jardin d'Acclimatation</b></li>
+                            <li>✔ Enjoy a family dinner at the Eiffel Tower</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Special family offer: <span class="text-success font-weight-bold">₹7,500</span> off for family bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹1,25,000 / Family</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹1,25,000 for up to 4 members | <b class="text-danger">Book Soon!</b></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://i0.wp.com/turismo.eurodicas.com.br/wp-content/uploads/2019/07/chateau-de-fontainebleau-1.jpg?w=1360&ssl=1" class="package-img" alt="Luxury Paris Tour">
+                    <div class="p-3">
+                       
+                        <span class="badge badge-success">Luxury Experience</span>
+                        <span class="badge badge-primary float-right">7N/8D</span>
+                        <h4 class="package-title">Luxury Paris Tour</h4>
+                        <p class="text-muted">7 Nights in Paris</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Stay at a 5-star hotel with a panoramic view of the Eiffel Tower</li>
+                            <li>✔ Private guided tours of the <b>Palace of Versailles</b> and <b>Château de Fontainebleau</b></li>
+                            <li>✔ Gourmet meals at top Parisian restaurants</li>
+                            <li>✔ Champagne tasting at exclusive vineyards</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Early booking offer: <span class="text-success font-weight-bold">₹20,000</span> off for reservations 90 days in advance!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹2,00,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹4,00,000 for two | <b class="text-danger">Limited Time Offer!</b></p>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://www.widest.com/wp-content/uploads/2017/08/The-Luxembourg-Garden-Le-Jardin-du-Luxembourg-Paris-France.jpg" class="package-img" alt="Paris City Break">
+                    <div class="p-3">
+                  
+                        <span class="badge badge-secondary">City Break</span>
+                        <span class="badge badge-primary float-right">4N/5D</span>
+                        <h4 class="package-title">Paris City Break</h4>
+                        <p class="text-muted">4 Nights in Paris</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Explore the <b>Champs-Élysées</b> and <b>Arc de Triomphe</b></li>
+                            <li>✔ Visit iconic museums: <b>Louvre</b> and <b>Musée Rodin</b></li>
+                            <li>✔ Relax at <b>Luxembourg Gardens</b> and the <b>Tuileries Garden</b></li>
+                            <li>✔ Comfortable accommodation in a 3-star hotel</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Book early and get a <span class="text-success font-weight-bold">₹3,000</span> discount!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹55,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹1,10,000 for two | <b class="text-danger">Limited Availability!</b></p>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://cdn.citywonders.com/media/17272/versailles-2.jpg" class="package-img" alt="Paris Art and History Tour">
+                    <div class="p-3">
+                       
+                        <span class="badge badge-warning">Educational Journey</span>
+                        <span class="badge badge-primary float-right">5N/6D</span>
+                        <h4 class="package-title">Paris Art and History Tour</h4>
+                        <p class="text-muted">5 Nights in Paris</p>
+                        <ul class="list-unstyled">
+                            <li>✔ In-depth tours of the <b>Louvre</b> and <b>Musée d'Orsay</b></li>
+                            <li>✔ Visit to the historic <b>Palace of Versailles</b></li>
+                            <li>✔ Walking tours of the <b>Latin Quarter</b> and <b>Le Marais</b></li>
+                            <li>✔ Accommodation in a historic hotel with daily breakfast</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Group discount of <span class="text-success font-weight-bold">₹10,000</span> for groups of 4 or more!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹70,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹2,80,000 for four | <b class="text-danger">Book Soon!</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   </body>
+</html>
