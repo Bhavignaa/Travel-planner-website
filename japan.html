@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <html>
+        <meta charset="UTF-8">
+    <title>Japan Travel Packages</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background: #f8f9fa;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-section {
+            height: 50vh;
+            background: url('https://www.kidzherald.com/wp-content/uploads/2024/08/F.jpg') 
+            no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: white;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 200px; 
+            position: relative;
+            z-index: 2; 
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .package-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: -50px auto 30px;
+            position: relative;
+            z-index: 3;
+            margin-left: 15%;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover {
+            transform: scale(1.05);
+        }
+
+        .package-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .package-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .package-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .wishlist-icon {
+            font-size: 20px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .wishlist-icon.liked {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-section">
+    <div class="overlay"></div> 
+    <div class="hero-text">
+        <h1>Japan Travel Packages</h1>
+        <p>Explore the Land of the Rising Sun!</p>
+    </div>
+</div>
+
+<div class="package-container">
+    <div class="row">
+
+        <!-- Package 1 -->
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://japantours.travel/wp-content/uploads/2018/02/doraemon-e1518026764680.jpg" class="package-img">
+                <div class="p-3">
+                    
+                    <span class="badge badge-warning">Family Fun</span>
+                    <span class="badge badge-primary float-right">3N/4D</span>
+                    <h4 class="package-title">Shinchan & Doraemon Museums Adventure</h4>
+                    <p class="text-muted">3 Nights in Saitama & Kawasaki</p>
+                    <ul class="list-unstyled">
+                        <li>✔ <b>Guided Tour</b> of the Shinchan Museum in Saitama</li>
+                        <li>✔ <b>Visit the Doraemon Museum</b> in Kawasaki</li>
+                        <li>✔ Meet your favorite characters: <b>Shinchan</b> and <b>Doraemon</b></li>
+                        <li>✔ Explore <b>Interactive Exhibits</b> in both museums</li>
+                        <li>✔ Stay in <b>Kid-friendly Themed Hotels</b></li>
+                        <li>✔ Visit <b>Exclusive Shops</b> for souvenirs</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Includes extra <span class="text-success font-weight-bold">₹3,000</span> discount for family bookings!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹22,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹44,000 | <b class="text-danger">Limited Time Offer!</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://japanspecialist.com/o/adaptive-media/image/472302/large/1_mt_fuji.jpg?t=1673014294450" class="package-img">
+                <div class="p-3">
+                    <span class="badge badge-success">Top Attraction</span>
+                    <span class="badge badge-primary float-right">2N/3D</span>
+                    <h4 class="package-title">Mount Fuji Adventure</h4>
+                    <p class="text-muted">2 Nights near Mount Fuji</p>
+                    <ul class="list-unstyled">
+                        <li>✔ <b>Round Trip Flights</b> included</li>
+                        <li>✔ <b>Private Transfers</b> to Mount Fuji</li>
+                        <li>✔ Stay in a <b>Luxury Mountain Lodge</b></li>
+                        <li>✔ <b>Guided Tour</b> to Mount Fuji's 5th Station</li>
+                        <li>✔ <b>Hiking Trails</b> and Photography Opportunities</li>
+                        <li>✔ <b>Onsen Bath</b> included</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Includes extra <span class="text-success font-weight-bold">₹3,000</span> discount for early bookings!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹25,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹50,000 | <b class="text-danger">Limited Availability!</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000168/img/basic/a0000168_main.jpg" class="package-img">
+                <div class="p-3">
+         
+                    <span class="badge badge-danger">Family Fun</span>
+                    <span class="badge badge-primary float-right">2N/3D</span>
+                    <h4 class="package-title">Tokyo Disneyland Adventure</h4>
+                    <p class="text-muted">2 Nights in Tokyo</p>
+                    <ul class="list-unstyled">
+                        <li>✔ Entry to <b>Tokyo Disneyland</b> and <b>DisneySea</b></li>
+                        <li>✔ Stay in a <b>Disney-Themed Hotel</b></li>
+                        <li>✔ <b>Exclusive VIP Passes</b> for Fast-track Access</li>
+                        <li>✔ <b>Meet Disney Characters</b> for unforgettable experiences</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Includes extra <span class="text-success font-weight-bold">₹2,000</span> discount for family bookings!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹28,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹56,000 | <b class="text-danger">Limited Availability!</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://i0.wp.com/www.cooking-sun.com/wp-content/uploads/2018/04/fushimi-inari-taisha-shrine.jpg?resize=1024%2C600&ssl=1" class="package-img">
+                <div class="p-3">
+                    
+                    <span class="badge badge-info">Cultural Exploration</span>
+                    <span class="badge badge-primary float-right">3N/4D</span>
+                    <h4 class="package-title">Kyoto Cultural Journey</h4>
+                    <p class="text-muted">3 Nights in Kyoto</p>
+                    <ul class="list-unstyled">
+                        <li>✔ Visit to the <b>Golden Pavilion</b> and <b>Fushimi Inari Shrine</b></li>
+                        <li>✔ Traditional <b>Tea Ceremony</b></li>
+                        <li>✔ Stay in a traditional <b>Ryokan</b></li>
+                        <li>✔ Explore <b>Arashiyama Bamboo Grove</b> and more</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Includes extra <span class="text-success font-weight-bold">₹3,000</span> discount for bookings over 4 people!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹30,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹60,000 | <b class="text-danger">Limited Time Offer!</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://media.istockphoto.com/id/1384894334/photo/crowded-osaka-dotonbori-entertainment-district.jpg?s=612x612&w=0&k=20&c=a5N4SWYKA1UmwtM1KLHk2GUQL8NHhkeihy5jzR9mB_w=" class="package-img">
+                <div class="p-3">
+                  
+                    <span class="badge badge-warning">Shopping & Adventure</span>
+                    <span class="badge badge-primary float-right">3N/4D</span>
+                    <h4 class="package-title">Osaka Adventure & Shopping</h4>
+                    <p class="text-muted">3 Nights in Osaka</p>
+                    <ul class="list-unstyled">
+                        <li>✔ Explore <b>Universal Studios Japan</b></li>
+                        <li>✔ Shop at <b>Shinsaibashi</b> and <b>Dotombori</b> streets</li>
+                        <li>✔ Visit to <b>Umeda Sky Building</b> for panoramic views</li>
+                        <li>✔ Stay in <b>Luxury Hotels</b></li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Includes extra <span class="text-success font-weight-bold">₹2,500</span> discount for family bookings!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹32,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹64,000 | <b class="text-danger">Limited Time Offer!</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://travelcrafters.com.au/wp-content/uploads/2025/02/download.jpeg" class="package-img">
+                <div class="p-3">
+                    <span class="badge badge-danger">Winter Adventure</span>
+                    <span class="badge badge-primary float-right">4N/5D</span>
+                    <h4 class="package-title">Hokkaido Winter Wonderland</h4>
+                    <p class="text-muted">4 Nights in Hokkaido</p>
+                    <ul class="list-unstyled">
+                        <li>✔ Explore <b>Sapporo Snow Festival</b></li>
+                        <li>✔ Skiing and Snowboarding at <b>Niseko</b></li>
+                        <li>✔ Stay in a cozy <b>Onsen Resort</b></li>
+                        <li>✔ Enjoy the <b>Winter Illuminations</b> in Sapporo</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Includes extra <span class="text-success font-weight-bold">₹4,000</span> discount for early bookings!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹40,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹80,000 | <b class="text-danger">Limited Availability!</b></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
