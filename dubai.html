@@ -1,0 +1,295 @@
+<html>
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Dubai Travel Packages</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background: #f8f9fa;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-section {
+            height: 50vh;
+            background: url('https://deih43ym53wif.cloudfront.net/dubai-palm-jumeirah-island-shutterstock_1291548640.jpg_3ab124c2b9.jpg') 
+            no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: white;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 200px; 
+            position: relative;
+            z-index: 2; 
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .package-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: -50px auto 30px; 
+            position: relative;
+            z-index: 3;
+            margin-left: 15%;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover {
+            transform: scale(1.05);
+        }
+
+        .package-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .package-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .package-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .wishlist-icon {
+            font-size: 20px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .wishlist-icon.liked {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="hero-section">
+        <div class="overlay"></div> 
+        <div class="hero-text">
+            <h1>Dubai Travel Packages</h1>
+            <p>Experience the Luxury and Adventure of Dubai!</p>
+        </div>
+    </div>
+
+    <div class="package-container">
+        <div class="row">
+           
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/71/96/b5.jpg" class="package-img">
+                    <div class="p-3">
+                        
+                        <span class="badge badge-warning">City Tour</span>
+                        <span class="badge badge-primary float-right">2N/3D</span>
+                        <h4 class="package-title">Dubai City Tour</h4>
+                        <p class="text-muted">2 Nights in Dubai</p>
+                        <ul class="list-unstyled">
+                            <li>✔ <b>Guided Tour</b> of the city's top attractions</li>
+                            <li>✔ Visit the <b>Burj Khalifa</b>, <b>Dubai Mall</b>, and more</li>
+                            <li>✔ Stay in a <b>5-Star Hotel</b></li>
+                            <li>✔ Enjoy a <b>Desert Safari</b> and <b>Sandboarding</b></li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Includes extra <span class="text-success font-weight-bold">₹5,000</span> discount for early bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹18,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹36,000 | <b class="text-danger">Limited Availability!</b></p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://static.zawya.com/view/acePublic/alias/contentid/ZTcxNzNmOGMtZjY4YS00/1/fj_68howaaacufw-jpeg.webp" class="package-img">
+                    <div class="p-3">
+                        
+                        <span class="badge badge-success">Shopping & Fun</span>
+                        <span class="badge badge-primary float-right">3N/4D</span>
+                        <h4 class="package-title">Dubai Shopping Festival</h4>
+                        <p class="text-muted">3 Nights in Dubai</p>
+                        <ul class="list-unstyled">
+                            <li>✔ <b>Exclusive Shopping Deals</b> at Dubai Mall</li>
+                            <li>✔ Visit <b>Gold Souk</b> and <b>Spice Souk</b></li>
+                            <li>✔ Enjoy discounts at <b>Luxury Stores</b></li>
+                            <li>✔ Stay in a luxurious <b>5-Star Resort</b></li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Includes extra <span class="text-success font-weight-bold">₹4,000</span> discount for group bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹22,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹44,000 | <b class="text-danger">Limited Time Offer!</b></p>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://i.cdn.newsbytesapp.com/images/28739781714941996.jpeg" class="package-img">
+                    <div class="p-3">
+                 
+                        <span class="badge badge-danger">Adventure</span>
+                        <span class="badge badge-primary float-right">1N/2D</span>
+                        <h4 class="package-title">Dubai Desert Safari & Camel Ride</h4>
+                        <p class="text-muted">1 Night in the Desert</p>
+                        <ul class="list-unstyled">
+                            <li>✔ <b>Sand Dune Bashing</b> & <b>Quad Biking</b></li>
+                            <li>✔ <b>Camel Ride</b> in the desert</li>
+                            <li>✔ Traditional <b>Bedouin Dinner</b> under the stars</li>
+                            <li>✔ Stay in a luxurious <b>Desert Resort</b></li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Includes extra <span class="text-success font-weight-bold">₹3,500</span> discount for group bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹15,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹30,000 | <b class="text-danger">Limited Time Offer!</b></p>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Aquaventure-Waterpark-Dubai-Rides-Ticket-Prices-More-MyBayut-body-image-1024x640.jpg" class="package-img">
+                    <div class="p-3">
+              
+                        <span class="badge badge-info">Family Fun</span>
+                        <span class="badge badge-primary float-right">2N/3D</span>
+                        <h4 class="package-title">Atlantis Aquaventure Waterpark</h4>
+                        <p class="text-muted">2 Nights in Dubai</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Entry to the <b>Aquaventure Waterpark</b></li>
+                            <li>✔ Stay in the iconic <b>Atlantis The Palm</b> Resort</li>
+                            <li>✔ Access to <b>Lost Chambers Aquarium</b></li>
+                            <li>✔ Exclusive VIP experiences and discounts</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Includes extra <span class="text-success font-weight-bold">₹6,000</span> discount for family bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹28,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹56,000 | <b class="text-danger">Limited Availability!</b></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://aws-tiqets-cdn.imgix.net/images/content/794bd846c88b4c4ca10678ad44e753cb.jpg?auto=format&fit=crop&q=75&w=250&h=250?auto=format&fit=crop&q=75&w=375&h=375" class="package-img">
+                    <div class="p-3">
+                 
+                        <span class="badge badge-warning">Top Attraction</span>
+                        <span class="badge badge-primary float-right">2N/3D</span>
+                        <h4 class="package-title">Burj Khalifa & Dubai Mall</h4>
+                        <p class="text-muted">2 Nights in Dubai</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Entry to the <b>Burj Khalifa Observation Deck</b></li>
+                            <li>✔ Shopping at the <b>Dubai Mall</b></li>
+                            <li>✔ Visit to the <b>Dubai Aquarium</b> and <b>Underwater Zoo</b></li>
+                            <li>✔ Stay in a luxurious <b>Downtown Dubai Hotel</b></li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Includes extra <span class="text-success font-weight-bold">₹4,500</span> discount for early bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹20,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹40,000 | <b class="text-danger">Limited Time Offer!</b></p>
+                    </div>
+                </div>
+            </div>
+
+         
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/images-2020-01-06T164549.641_20200106164600.jpeg" class="package-img">
+                    <div class="p-3">
+                   
+                        <span class="badge badge-danger">Luxury Experience</span>
+                        <span class="badge badge-primary float-right">3N/4D</span>
+                        <h4 class="package-title">Dubai Cruise & Palm Jumeirah</h4>
+                        <p class="text-muted">3 Nights in Dubai</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Enjoy a luxurious <b>Dubai Cruise</b> along the coastline</li>
+                            <li>✔ Visit the iconic <b>Palm Jumeirah</b></li>
+                            <li>✔ Stay in a 5-Star <b>Beach Resort</b></li>
+                            <li>✔ Explore the <b>Atlantis Aquaventure</b> Waterpark</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Includes extra <span class="text-success font-weight-bold">₹5,000</span> discount for family bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹35,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹70,000 | <b class="text-danger">Limited Availability!</b></p>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+</body>
+</html>
