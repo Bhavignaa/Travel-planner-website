@@ -1,0 +1,247 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .carousel-item {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .navbar .navbar-nav .nav-link:hover {
+            color: rgb(26, 22, 22);
+        }
+        .navbar-nav .active .nav-link {
+            color: black !important;
+            font-weight: bold;
+        }
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 5;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            padding: 15px 20px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        #chatbotWindow {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .chatbox-body {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .chatbox-body p {
+            padding: 5px;
+            background-color: #e9ecef;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .chatbox-input input {
+            width: 85%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chatbox-input button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index1.html">TRAVEL</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index1.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="memories.html">Memories</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="carouselBackground" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video class="video-background" autoplay loop muted>
+                    <source src="https://cdn.pixabay.com/video/2020/09/23/50637-460909357_tiny.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video class="video-background" autoplay loop muted>
+                    <source src="https://cdn.pixabay.com/video/2023/09/01/178732-860527368_tiny.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video class="video-background" autoplay loop muted>
+                    <source src="https://cdn.pixabay.com/video/2023/05/15/163160-827112938_tiny.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Your dream vacation is just a click away</h1>
+        <p class="lead">The world is waiting for you - where will you go next?</p>
+        <a class="btn btn-primary btn-lg" href="login.html" role="button">Explore Now</a>
+    </header>
+
+
+    <button class="chatbot-btn" onclick="toggleChatbot()">Chat</button>
+
+
+    <div id="chatbotWindow">
+        <div class="chatbox-body" id="chatboxBody">
+            <p>Hello! I'm your assistant. How can I help you today?</p>
+        </div>
+        <div class="chatbox-input">
+            <input type="text" id="userMessage" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            var chatbotWindow = document.getElementById('chatbotWindow');
+            chatbotWindow.style.display = chatbotWindow.style.display === "block" ? "none" : "block";
+        }
+
+        function sendMessage() {
+            var userMessage = document.getElementById('userMessage').value.trim();
+            if (userMessage !== "") {
+                var chatboxBody = document.getElementById('chatboxBody');
+                var userMessageElement = document.createElement('p');
+                userMessageElement.textContent = "You: " + userMessage;
+                chatboxBody.appendChild(userMessageElement);
+
+                var botResponse = generateResponse(userMessage);
+
+                var botMessageElement = document.createElement('p');
+                botMessageElement.textContent = "Bot: " + botResponse;
+                chatboxBody.appendChild(botMessageElement);
+
+                chatboxBody.scrollTop = chatboxBody.scrollHeight;
+                document.getElementById('userMessage').value = "";
+            }
+        }
+
+        function generateResponse(userMessage) {
+            var response = "I'm sorry, I didn't quite understand that. Could you please clarify?";
+            userMessage = userMessage.toLowerCase();
+
+            if (userMessage.includes("hi") || userMessage.includes("hello")) {
+                response = "Hello! How can I assist you today?";
+            } else if (userMessage.includes("food")) {
+                response = "Yes, we offer food in some packages. Would you like to know more?";
+            } else if (userMessage.includes("guide")) {
+                response = "Yes, a guide can accompany you on your trip. Would you like to add one to your package?";
+            } else if (userMessage.includes("travel insurance")) {
+                response = "We recommend getting travel insurance for your peace of mind. Would you like to add it?";
+            } else if (userMessage.includes("hotel") && userMessage.includes("included")) {
+                response = "Yes, we include hotel stays in most of our packages. Would you like more details?";
+            } else if (userMessage.includes("flight")) {
+                response = "We provide flight bookings as part of our packages. When are you planning to travel?";
+            } else if (userMessage.includes("visa")) {
+                response = "We can assist with visa processing for many countries. Let us know your destination!";
+            } else if (userMessage.includes("departure")) {
+                response = "Your departure date depends on the package you choose. Can you tell me your preferred date?";
+            } else if (userMessage.includes("payment options")) {
+                response = "We accept all major credit cards, PayPal, and bank transfers. How would you like to pay?";
+            } else if (userMessage.includes("cancellation policy")) {
+                response = "Our cancellation policy varies based on the package. Would you like to see the details?";
+            } else if (userMessage.includes("group size")) {
+                response = "We can accommodate small to large groups. What size is your group?";
+            } else if (userMessage.includes("solo trip")) {
+                response = "We have solo travel packages. Would you like to explore them?";
+            } else if (userMessage.includes("what to pack")) {
+                response = "You should pack according to your destination's weather. Can you tell me where you're going?";
+            } else if (userMessage.includes("weather")) {
+                response = "I can help you with weather information. Which destination are you interested in?";
+            } else if (userMessage.includes("safety")) {
+                response = "Safety is our top priority. We ensure all trips are safe and secure. Would you like to know more?";
+            } else if (userMessage.includes("tips")) {
+                response = "I can provide travel tips. Where are you heading for your trip?";
+            }
+
+            return response;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
