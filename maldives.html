@@ -1,0 +1,283 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Maldives Travel Packages</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background: #f8f9fa;
+            color: black;
+            font-family: Arial, sans-serif;
+        } 
+        .hero-section {
+            height: 50vh;
+            background: url('https://wallpaperaccess.com/full/465669.jpg')  no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-text {
+            color: white;
+            text-align: left;
+            font-weight: bold;
+            margin-top: 200px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .package-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: -50px auto 30px;
+            position: relative;
+            z-index: 3;
+            margin-left: 15%;
+        }
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        .package-card:hover {
+            transform: scale(1.05);
+        }
+        .package-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .package-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .package-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .wishlist-icon {
+            font-size: 20px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .wishlist-icon.liked {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-text">
+            <h1>Maldives Travel Packages</h1>
+            <p>Discover the Tropical Paradise!</p>
+        </div>
+    </div>
+
+    
+    <div class="package-container">
+        <div class="row">
+<div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1076910233_20190613181742.jpg" class="package-img" alt="Romantic Maldives Escape">
+                    <div class="p-3">
+                  
+                        <span class="badge badge-danger">Romantic Getaway</span>
+                        <span class="badge badge-primary float-right">4N/5D</span>
+                        <h4 class="package-title">Romantic Maldives Escape</h4>
+                        <p class="text-muted">4 Nights in Maldives</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Stay in an overwater villa with private pool</li>
+                            <li>✔ Candlelight dinner on a private beach</li>
+                            <li>✔ Couple's spa therapy session</li>
+                            <li>✔ Sunset dolphin cruise</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Early bird discount of <span class="text-success font-weight-bold">₹10,000</span> for bookings made 60 days in advance!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹1,50,000 / Person</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹3,00,000 for two | <b class="text-danger">Limited Availability!</b></p>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-md-4">
+                <div class="package-card">
+                    <img src="https://images.news18.com/ibnlive/uploads/2021/09/pexels-asad-photo-maldives-3601426.jpg?impolicy=website&width=0&height=0" class="package-img" alt="Family Fun in Maldives">
+                    <div class="p-3">
+              
+                        <span class="badge badge-warning">Family Vacation</span>
+                        <span class="badge badge-primary float-right">5N/6D</span>
+                        <h4 class="package-title">Family Fun in Maldives</h4>
+                        <p class="text-muted">5 Nights in Maldives</p>
+                        <ul class="list-unstyled">
+                            <li>✔ Accommodation in a family suite</li>
+                            <li>✔ Guided snorkeling and marine life exploration</li>
+                            <li>✔ Kids' club with daily activities</li>
+                            <li>✔ Excursion to a local island for cultural experience</li>
+                        </ul>
+                        <div class="p-2 bg-light border rounded">
+                            Special family offer: <span class="text-success font-weight-bold">₹15,000</span> off for family bookings!
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="package-price">₹1,20,000 / Family</span>
+                            <a href="book.html" class="btn btn-primary">Book Now</a>
+                        </div>
+                        <p class="text-muted small mt-1">Total Price ₹1,20,000 for up to 4 members | <b class="text-danger">Book Soon!</b></p>
+                    </div>
+                </div>
+            </div>
+        
+               
+                <div class="col-md-4">
+                    <div class="package-card">
+                        <img src="https://www.scuba.com/blog/wp-content/uploads/2018/08/shutterstock_664589182.jpg" class="package-img" alt="Adventure & Scuba Diving Tour">
+                        <div class="p-3">
+                           
+                            <span class="badge badge-info">Adventure & Diving</span>
+                            <span class="badge badge-primary float-right">6N/7D</span>
+                            <h4 class="package-title">Adventure & Scuba Diving Tour</h4>
+                            <p class="text-muted">6 Nights in Maldives</p>
+                            <ul class="list-unstyled">
+                                <li>✔ Certified scuba diving sessions</li>
+                                <li>✔ Snorkeling with sharks & manta rays</li>
+                                <li>✔ Water sports: Jet skiing, parasailing, kayaking</li>
+                                <li>✔ Sandbank picnic & BBQ dinner</li>
+                            </ul>
+                            <div class="p-2 bg-light border rounded">
+                                Get a free underwater photoshoot worth ₹5,000!
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="package-price">₹1,80,000 / Person</span>
+                                <a href="book.html" class="btn btn-primary">Book Now</a>
+                            </div>
+                            <p class="text-muted small mt-1">Total Price ₹3,60,000 for two | <b class="text-danger">Few Spots Left!</b></p>
+                        </div>
+                    </div>
+                </div>
+
+            
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://coralglass.sfo2.digitaloceanspaces.com/news/cover/YTh28YJpyZRdMfGpoHfUu0APHqW1ZYE2AaQY1MlV.jpeg" class="package-img" alt="Luxury Overwater Villa Stay">
+                <div class="p-3">
+    
+                    <span class="badge badge-warning">Luxury Stay</span>
+                    <span class="badge badge-primary float-right">5N/6D</span>
+                    <h4 class="package-title">Luxury Overwater Villa Stay</h4>
+                    <p class="text-muted">5 Nights in Maldives</p>
+                    <ul class="list-unstyled">
+                        <li>✔ Private overwater villa with infinity pool</li>
+                        <li>✔ Gourmet meals with candlelight dinners</li>
+                        <li>✔ Private yacht transfers & sunset cruise</li>
+                        <li>✔ Spa & wellness treatments</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Limited-time offer: Save ₹25,000 per couple!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹2,50,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹5,00,000 for two | <b class="text-success">Luxury Bestseller!</b></p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://i0.wp.com/www.indulgemaldives.com/wp-content/uploads/2021/06/island-hopping-in-maldives.jpg?resize=2048%2C1283&ssl=1" class="package-img" alt="Budget Maldives Getaway">
+                <div class="p-3">
+                    
+                    <span class="badge badge-success">Budget Friendly</span>
+                    <span class="badge badge-primary float-right">4N/5D</span>
+                    <h4 class="package-title">Budget Maldives Getaway</h4>
+                    <p class="text-muted">4 Nights in Maldives</p>
+                    <ul class="list-unstyled">
+                        <li>✔ Stay at beachfront guesthouse</li>
+                        <li>✔ Breakfast included</li>
+                        <li>✔ Snorkeling & island hopping tour</li>
+                        <li>✔ Speedboat transfers</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Special deal: ₹10,000 off per person!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹85,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹1,70,000 for two | <b class="text-danger">Hurry, Limited Seats!</b></p>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-md-4">
+            <div class="package-card">
+                <img src="https://alphamaldives.com/blog/wp-content/uploads/2017/01/2a2.jpg" class="package-img" alt="All-Inclusive Maldives">
+                <div class="p-3">
+                 
+                    <span class="badge badge-danger">All Inclusive</span>
+                    <span class="badge badge-primary float-right">7N/8D</span>
+                    <h4 class="package-title">All-Inclusive Maldives Extravaganza</h4>
+                    <p class="text-muted">7 Nights in Maldives</p>
+                    <ul class="list-unstyled">
+                        <li>✔ 5-star beach resort stay</li>
+                        <li>✔ Unlimited meals & drinks</li>
+                        <li>✔ Dolphin watching & water sports</li>
+                        <li>✔ Spa & luxury yacht cruise</li>
+                    </ul>
+                    <div class="p-2 bg-light border rounded">
+                        Flash Sale: ₹30,000 cashback for early bookings!
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="package-price">₹3,20,000 / Person</span>
+                        <a href="book.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                    <p class="text-muted small mt-1">Total Price ₹6,40,000 for two | <b class="text-success">Most Popular Package!</b></p>
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+        
+    
+</html>
