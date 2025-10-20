@@ -1,0 +1,308 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Travel Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>   
+
+        .contact-container {
+            display: flex;
+            margin: 50px auto;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .contact-info {
+            background-color: #007bff; 
+            color: white;
+            padding: 30px;
+            width: 40%;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        .contact-info .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .contact-form {
+            padding: 30px;
+            width: 60%;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            font-weight: 600;
+        }
+
+        .contact-form .form-control {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .contact-form .btn-send {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            border: none;
+        }
+        .contact-form .btn-send:hover {
+            background-color: #0056b3; 
+        }
+
+        
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            padding: 15px 20px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        #chatbotWindow {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .chatbox-body {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .chatbox-body p {
+            padding: 5px;
+            background-color: #e9ecef;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .chatbox-input input {
+            width: 85%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chatbox-input button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+                cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p><i class="fas fa-map-marker-alt"></i> 1202, Skyline Towers, Bandra West, Mumbai, Maharashtra 400050</p>
+            <p><i class="fas fa-envelope"></i> support@travelplanner.com</p>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="What’s your inquiry about?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-send">Send</button>
+                <p id="successMessage" class="success-message">Message Sent Successfully!</p>
+            </form>
+        </div>
+    </div>
+ <button class="chatbot-btn" onclick="toggleChatbot()">Chat</button>
+
+ <div id="chatbotWindow">
+     <div class="chatbox-body" id="chatboxBody">
+         <p>Hello! I'm your assistant. How can I help you today?</p>
+     </div>
+     <div class="chatbox-input">
+         <input type="text" id="userMessage" placeholder="Type your message...">
+         <button onclick="sendMessage()">Send</button>
+     </div>
+ </div>
+
+ <script>
+     function toggleChatbot() {
+         var chatbotWindow = document.getElementById('chatbotWindow');
+         if (chatbotWindow.style.display === "none" || chatbotWindow.style.display === "") {
+             chatbotWindow.style.display = "block";
+         } else {
+             chatbotWindow.style.display = "none";
+         }
+     }
+     function sendMessage() {
+         var userMessage = document.getElementById('userMessage').value.trim();
+         if (userMessage !== "") {
+             var chatboxBody = document.getElementById('chatboxBody');
+             var userMessageElement = document.createElement('p');
+             userMessageElement.textContent = "You: " + userMessage;
+             chatboxBody.appendChild(userMessageElement);
+
+             var botResponse = generateResponse(userMessage);
+
+             var botMessageElement = document.createElement('p');
+             botMessageElement.textContent = "Bot: " + botResponse;
+             chatboxBody.appendChild(botMessageElement);
+
+             chatboxBody.scrollTop = chatboxBody.scrollHeight;
+
+             document.getElementById('userMessage').value = "";
+         }
+     }
+
+     function generateResponse(userMessage) {
+         var response = "I'm sorry, I didn't quite understand that. Could you please clarify?";
+
+
+         userMessage = userMessage.toLowerCase();
+
+         if (userMessage.includes("hi") || userMessage.includes("hello")) {
+             response = "Hello! How can I assist you today?";
+         } else if (userMessage.includes("food")) {
+             response = "Yes, we offer food in some packages. Would you like to know more?";
+         } else if (userMessage.includes("guide")) {
+             response = "Yes, a guide can accompany you on your trip. Would you like to add one to your package?";
+         } else if (userMessage.includes("travel insurance")) {
+             response = "We recommend getting travel insurance for your peace of mind. Would you like to add it?";
+         } else if (userMessage.includes("hotel") && userMessage.includes("included")) {
+             response = "Yes, we include hotel stays in most of our packages. Would you like more details?";
+         } else if (userMessage.includes("flight")) {
+             response = "We provide flight bookings as part of our packages. When are you planning to travel?";
+         } else if (userMessage.includes("visa")) {
+             response = "We can assist with visa processing for many countries. Let us know your destination!";
+         } else if (userMessage.includes("departure")) {
+             response = "Your departure date depends on the package you choose. Can you tell me your preferred date?";
+         } else if (userMessage.includes("payment options")) {
+             response = "We accept all major credit cards, PayPal, and bank transfers. How would you like to pay?";
+         } else if (userMessage.includes("cancellation policy")) {
+             response = "Our cancellation policy varies based on the package. Would you like to see the details?";
+         } else if (userMessage.includes("group size")) {
+             response = "We can accommodate small to large groups. What size is your group?";
+         } else if (userMessage.includes("solo trip")) {
+             response = "We have solo travel packages. Would you like to explore them?";
+         } else if (userMessage.includes("what to pack")) {
+             response = "You should pack according to your destination's weather. Can you tell me where you're going?";
+         } else if (userMessage.includes("weather")) {
+             response = "I can help you with weather information. Which destination are you interested in?";
+         } else if (userMessage.includes("safety")) {
+             response = "Safety is our top priority. We ensure all trips are safe and secure. Would you like to know more?";
+         } else if (userMessage.includes("tips")) {
+             response = "I can provide travel tips. Where are you heading for your trip?";
+         } else {
+             response = "I'm sorry, I didn't quite understand that. Could you please clarify?";
+         }
+
+         return response;
+     }
+ </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('subject', subject);
+    formData.append('message', message);
+
+    fetch('contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); 
+        document.getElementById('successMessage').style.display = 'block';
+
+        setTimeout(() => {
+            document.getElementById('contactForm').reset();
+            document.getElementById('successMessage').style.display = 'none';
+        }, 3000);
+    })
+    .catch(error => console.error('Error:', error));
+});
+    </script>
+</body>
+</html>
