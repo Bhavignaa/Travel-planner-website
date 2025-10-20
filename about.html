@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Travel Planner</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background: url('https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Travel-Backgrounds-Download-HD.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .navbar .navbar-nav .nav-link:hover {
+            color: rgb(26, 22, 22);
+        }
+        .navbar-nav .active .nav-link {
+            color: black !important;
+            font-weight: bold;
+        }
+        .destination-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+        .destination-card {
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .destination-card:hover {
+            transform: scale(1.05);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 150px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .destination-info {
+            padding: 15px;
+        }
+        .destination-info h5 {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .destination-info p {
+            color: #666;
+            font-size: 14px;
+        }
+        .chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            padding: 15px 20px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        #chatbotWindow {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .chatbox-body {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .chatbox-body p {
+            padding: 5px;
+            background-color: #e9ecef;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .chatbox-input input {
+            width: 85%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chatbox-input button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index1.html">TRAVEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index1.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="memories.html">Memories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container text-center mt-5">
+        <h2>About Us</h2>
+        <p>We are passionate about making your travel dreams a reality. With customized travel packages and expert guides, we ensure unforgettable experiences for every traveler.</p>
+    </div>
+    <div class="container destination-container">
+        <div style="display: flex; gap: 20px;">
+            <div class="destination-card" onclick="redirectToPackages('paris')">
+                <img src="https://media.istockphoto.com/id/1345426734/photo/eiffel-tower-paris-river-seine-sunset-twilight-france.jpg?s=612x612&w=0&k=20&c=I5rAH5d_-Yyag8F0CKzk9vzMr_1rgkAASGTE11YMh9A=" alt="Paris">
+                <div class="destination-info">
+                    <h5>Paris</h5>
+                    <p>Starting at ₹60,000 per person</p>
+                </div>
+            </div>
+            <div class="destination-card" onclick="redirectToPackages('india')">
+                <img src="https://www.tusktravel.com/blog/wp-content/uploads/2022/04/India-Gate-Delhi.jpg" alt="India">
+                <div class="destination-info">
+                    <h5>India</h5>
+                    <p>Starting at ₹20,000 per person</p>
+                </div>
+            </div>
+            <div class="destination-card" onclick="redirectToPackages('maldives')">
+                <img src="https://www.sunsiyam.com/media/5k3iw5a5/ssiv_general_04.jpg?width=782&height=521&mode=max" alt="Maldives">
+                <div class="destination-info">
+                    <h5>Maldives</h5>
+                    <p>Starting at ₹40,000 per person</p>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+            <div class="destination-card" onclick="redirectToPackages('japan')">
+                <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGphcGFufGVufDB8fDB8fHww" alt="Japan">
+                <div class="destination-info">
+                    <h5>Japan</h5>
+                    <p>Starting at ₹70,000 per person</p>
+                </div>
+            </div>
+            <div class="destination-card" onclick="redirectToPackages('dubai')">
+                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/56000/56828-Dubai.jpg" alt="Dubai">
+                <div class="destination-info">
+                    <h5>Dubai</h5>
+                    <p>Starting at ₹50,000 per person</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="chatbot-btn" onclick="toggleChatbot()">Chat</button>
+
+    <div id="chatbotWindow">
+        <div class="chatbox-body" id="chatboxBody">
+            <p>Hello! I'm your assistant. How can I help you today?</p>
+        </div>
+        <div class="chatbox-input">
+            <input type="text" id="userMessage" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+      
+        function toggleChatbot() {
+            var chatbotWindow = document.getElementById('chatbotWindow');
+            if (chatbotWindow.style.display === "none" || chatbotWindow.style.display === "") {
+                chatbotWindow.style.display = "block";
+            } else {
+                chatbotWindow.style.display = "none";
+            }
+        }
+
+        function sendMessage() {
+            var userMessage = document.getElementById('userMessage').value.trim();
+            if (userMessage !== "") {
+                var chatboxBody = document.getElementById('chatboxBody');
+                var userMessageElement = document.createElement('p');
+                userMessageElement.textContent = "You: " + userMessage;
+                chatboxBody.appendChild(userMessageElement);
+
+                var botResponse = generateResponse(userMessage);
+
+                var botMessageElement = document.createElement('p');
+                botMessageElement.textContent = "Bot: " + botResponse;
+                chatboxBody.appendChild(botMessageElement);
+
+                chatboxBody.scrollTop = chatboxBody.scrollHeight;
+
+                document.getElementById('userMessage').value = "";
+            }
+        }
+
+        function generateResponse(userMessage) {
+            var response = "I'm sorry, I didn't quite understand that. Could you please clarify?";
+
+            userMessage = userMessage.toLowerCase();
+
+            if (userMessage.includes("hi") || userMessage.includes("hello")) {
+                response = "Hello! How can I assist you today?";
+            } else if (userMessage.includes("food")) {
+                response = "Yes, we offer food in some packages. Would you like to know more?";
+            } else if (userMessage.includes("guide")) {
+                response = "Yes, a guide can accompany you on your trip. Would you like to add one to your package?";
+            } else if (userMessage.includes("travel insurance")) {
+                response = "We recommend getting travel insurance for your peace of mind. Would you like to add it?";
+            } else if (userMessage.includes("hotel") && userMessage.includes("included")) {
+                response = "Yes, we include hotel stays in most of our packages. Would you like more details?";
+            } else if (userMessage.includes("flight")) {
+                response = "We provide flight bookings as part of our packages. When are you planning to travel?";
+            } else if (userMessage.includes("visa")) {
+                response = "We can assist with visa processing for many countries. Let us know your destination!";
+            } else if (userMessage.includes("departure")) {
+                response = "Your departure date depends on the package you choose. Can you tell me your preferred date?";
+            } else if (userMessage.includes("payment options")) {
+                response = "We accept all major credit cards, PayPal, and bank transfers. How would you like to pay?";
+            } else if (userMessage.includes("cancellation policy")) {
+                response = "Our cancellation policy varies based on the package. Would you like to see the details?";
+            } else if (userMessage.includes("group size")) {
+                response = "We can accommodate small to large groups. What size is your group?";
+            } else if (userMessage.includes("solo trip")) {
+                response = "We have solo travel packages. Would you like to explore them?";
+            } else if (userMessage.includes("what to pack")) {
+                response = "You should pack according to your destination's weather. Can you tell me where you're going?";
+            } else if (userMessage.includes("weather")) {
+                response = "I can help you with weather information. Which destination are you interested in?";
+            } else if (userMessage.includes("safety")) {
+                response = "Safety is our top priority. We ensure all trips are safe and secure. Would you like to know more?";
+            } else if (userMessage.includes("tips")) {
+                response = "I can provide travel tips. Where are you heading for your trip?";
+            } else {
+                response = "I'm sorry, I didn't quite understand that. Could you please clarify?";
+            }
+
+            return response;
+        }
+    </script>
+
+    <script>
+        function redirectToPackages(destination) {
+            if (destination === 'paris') {
+                window.location.href = 'paris.html';
+            } else if (destination === 'maldives') {
+                window.location.href = 'maldives.html';
+            } else if (destination === 'india') {
+                window.location.href = 'india.html';
+            } else if (destination === 'japan') {
+                window.location.href = 'japan.html';
+            } else if (destination === 'dubai') {
+                window.location.href = 'dubai.html';
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
